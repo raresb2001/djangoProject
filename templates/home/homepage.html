@@ -1,0 +1,18 @@
+{% extends 'base.html ' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <br><br>
+    <div class="container px-4 text-center">
+        <div class="row gx-5">
+            <div class="col-md-8 offset-md-2">
+
+                <a href="{% url 'create-student' %}"><button type="button" class="btn btn-primary">Go to create students</button></a>
+                <a href="{% url 'create_trainer' %}"><button type="button" class="btn btn-primary">Go to create trainers</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+#de stilizat in timpul liber

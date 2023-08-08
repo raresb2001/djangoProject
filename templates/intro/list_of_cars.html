@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %} List of Cars {% endblock %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class="table table-primary table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name of brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for car in cars %}
+                        <tr>
+                            <td>{{ car.brand }}</td>
+                            <td>{{ car.model }}</td>
+                            <td>{{ car.year }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'list_movies' %}" class="btn btn-primary"> Go to list of movies page</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{# Aceasta este partea cu centratul pe mijloc #}
+
+
+{#     <div class="container-fluid">#}
+{#        <div class="row">#}
+{#            <div class="col-md-6">#}
+{#                <table class="table table-primary table-striped">#}
+{#                    <thead>#}
+{#                    <tr>#}
+{#                        <th>Name of brand</th>#}
+{#                        <th>Model</th>#}
+{#                        <th>Year</th>#}
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{##}
+{#                    {% for car in cars %}#}
+{#                        <tr>#}
+{#                            <td>{{ car.brand }}</td>#}
+{#                            <td>{{ car.model }}</td>#}
+{#                            <td>{{ car.year }}</td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{##}
+{#                    </tbody>#}
+{#                </table>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <a href="{% url 'list_movies' %}"> Go to list of movies page</a>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <h1>Hello, again</h1>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{# Aceasta este partea cu 3 coloane #}
+
+

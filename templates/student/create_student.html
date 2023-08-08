@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title  %} Create a new student {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><br>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Create a new student</h3>
+                    </div>
+                    <form method="post" enctype="multipart/form-data"> {# permite trimiterea si preluarea corecta a fisierlor de utilizator catre server #}
+                        {% csrf_token %}
+                        <div class="card-body">
+                            {{ form.as_p }}
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type = "submit" class="btn btn-secondary">SAVE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {# CSRF TOKEN #}
+    {# este un tag special in django care este utilizat pentru a asigura securitatea impotriva #}
+    {# atacurilor de tip CSRF. Un atac csrf poate fi efectuat atunci cand un atacator trimite in  #}
+    {# mod neautorizat solicati catre aplicatia web in numele utilizatorul autentificat folosindu-se de #}
+    {# faptul ca aplicatia nu verifica sursa solicitarii #}
+
+
+
+
+    {# Metoda POST-> intr-un formular HTML specificam modul in care datele din formular sunt trimise serverului #}
+    {# Atunci cand folosim metoda POST, datele din formular sunt incapsulate in corpul solicitari HTTP #}
+    {# NU SUNT vizibile in URL afisat in bara de adrese web.  #}
+    {# In momentul in care utilizatorul apsa pe butonul Save, date din formular vor fi trimite pentru a fi salvate #}
+{% endblock %}
